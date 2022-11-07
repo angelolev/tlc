@@ -11,14 +11,13 @@
     <link rel="stylesheet" href="./src/styles/scss/index.css">
 </head>
 <body>
-    
-    <main>
+    <main id="top">
         <nav>
             <div class="container">
-                <a href="#" ><img src="./src/svg/logo.svg" alt="Logo TLC"></a>
+                <a onclick="scrollToElement('#top')"><img src="./src/svg/logo.svg" alt="Logo TLC"></a>
                 <ul>
-                    <li><a class="scrollable" href="#caracteristicas">Caracteristicas</a></li>
-                    <li><a class="scrollable" href="#showcase">Showcase</a></li>
+                    <li><a class="scrollable" onclick="scrollToElement('#caracteristicas')">Caracteristicas</a></li>
+                    <li><a class="scrollable" onclick="scrollToElement('#showcase')">Showcase</a></li>
                 </ul>
             </div>
         </nav>
