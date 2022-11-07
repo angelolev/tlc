@@ -1,6 +1,38 @@
 .header {
     position: relative;
     overflow: hidden;
+
+    &__counter {
+        display: flex;
+        margin: 2rem 0;
+
+        .row {
+            border-right: 1px solid $green;
+            padding: 0 1rem 0 2.5rem;
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                border: none;
+            }
+        }
+
+        h4 {
+            color: $yellow;
+            font-size: 2rem;
+            font-weight: bold;
+            
+            @include breakpoint($md) {
+                font-size: 3rem;
+            }
+        }
+
+        p {
+            font-size: 1.4rem;
+        }
+    }
     
     &__content {
         padding: 7rem 4rem 3rem;

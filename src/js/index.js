@@ -1,27 +1,14 @@
 $(document).ready(function () {
     // Add smooth scrolling to all links
-    $(".scrollable").on("click", function (event) {
-      // Make sure this.hash has a value before overriding default behavior
-      if (this.hash !== "") {
-        // Prevent default anchor click behavior
-        event.preventDefault();
-  
-        // Store hash
-        var hash = this.hash;
-  
-        // Using jQuery's animate() method to add smooth page scroll
-        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-        $("html, body").animate(
-          {
-            scrollTop: $(hash).offset().top,
-          },
-          800,
-          function () {
-            // Add hash (#) to URL when done scrolling (default click behavior)
-            window.location.hash = hash;
-          }
-        );
-      } // End if
+    $(".scrollable").on("click", function (e) {
+      e.preventDefault();
+        var target = this.hash,
+        $target = $(target);
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top
+        }, 900, 'swing', function () {
+            window.location.hash = target;
+        });
     });
 
     $(".scrollable").click(function() {
@@ -33,6 +20,26 @@ $(document).ready(function () {
       }
         
       this.classList.add("active");
-  });
+    });
   });
   
+  document.addEventListener("DOMContentLoaded", () => {
+    function counter(id, start, end, duration) {
+     let obj = document.getElementById(id),
+      current = start,
+      range = end - start,
+      increment = end > start ? 1 : -1,
+      step = Math.abs(Math.floor(duration / range)),
+      timer = setInterval(() => {
+       current += increment;
+       obj.textContent = current;
+       if (current == end) {
+        clearInterval(timer);
+       }
+      }, step);
+    }
+    counter("count1", 0, 400, 3000);
+    counter("count2", 100, 50, 2500);
+    counter("count3", 0, 40, 3000);
+   });
+   

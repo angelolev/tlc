@@ -10,11 +10,12 @@
     h2 {
         font-size: 2rem;
         font-weight: bold;
+        margin: 0 auto;
+        max-width: 30rem;
 
         @include breakpoint($sm) {
             font-size: 3.5rem;
             max-width: 50rem;
-            margin: 0 auto;
         }
 
         > p {
@@ -37,12 +38,15 @@
             padding-top: 10rem;
         }
 
+       
+
         .image-1 {
             position: absolute;
-            right: 0;
-            top: 36rem;
-            max-width: 20rem;
+            right: 8rem;
+            top: 38rem;
+            max-width: 17rem;
             transform: rotate(270deg);
+            z-index: 50;
 
             @include breakpoint($sm) {
                 right: 10rem;
@@ -51,13 +55,15 @@
             }
 
             @include breakpoint($lg) {
-                right: 28rem;
+                right: 30rem;
+                bottom: -5rem;
+                max-width: 22rem;
             }
         }
 
         .image-2 {
             position: absolute;
-            right: -12.5rem;
+            right: -6rem;
             bottom: 35rem;
             transform: rotate(270deg);
             max-width: 31rem;
@@ -75,6 +81,7 @@
 
             @include breakpoint($lg) {
                 left: 27rem;
+                bottom: 14.5rem;
             }
         }
 
@@ -83,10 +90,18 @@
             background-color: $white;
             z-index: 150;
             position: relative;
-            padding: 3rem;
+            padding: 3rem 2rem;
             box-shadow: 0px 4px 19px -10px rgb(0, 0, 0, 0.5);
             text-align: left;
             max-width: 22rem;
+            left: -5rem;
+
+            @include breakpoint($lg) {
+                left: 0;
+                padding: 4rem 5rem;
+                max-width: 26rem;
+                margin-bottom: 6rem;
+            }
 
             h3 {
                 color: $black;
@@ -95,16 +110,36 @@
 
             p { 
                 color: $black;
-                font-size: 1.2rem;
+                font-size: 1rem;
+
+                @include breakpoint($lg) {
+                    font-size: 1.2rem;
+                }
             }
 
             &.green {
                 background-color: $green;
                 position: relative;
-                left: 3rem;
+                left: -2.5rem;
+
+                @include breakpoint($lg) {
+                    left: 1rem;
+                }
 
                 h3, p {
                     color: $white;
+                }
+
+                &.landscape {
+                    left: 6rem;
+                    top: -2rem;
+                    z-index: 10;
+
+                    @include breakpoint($lg) {
+                        left: 14rem;
+                        z-index: 100;
+                        top: 5rem;
+                    }
                 }
             }
 
