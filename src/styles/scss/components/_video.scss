@@ -1,0 +1,22 @@
+.video {
+    
+    video {
+        max-width: 100%;
+    }
+
+    &__mobile {
+        display: block;
+
+        @include breakpoint($sm) {
+            display: none;
+        }
+    }
+
+    &__desktop {
+        display: none;
+
+        @include breakpoint($sm) {
+            display: block;
+        }
+    }
+}
