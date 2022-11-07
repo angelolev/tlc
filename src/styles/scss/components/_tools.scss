@@ -1,0 +1,123 @@
+.tools {
+    text-align: center;
+    padding: 4rem 0;
+    overflow: hidden;
+
+    @include breakpoint($lg) {
+        padding: 10rem 0;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: bold;
+
+        @include breakpoint($sm) {
+            font-size: 3.5rem;
+            max-width: 50rem;
+            margin: 0 auto;
+        }
+
+        > p {
+            color: $gray;
+        }
+    }
+
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 7rem;
+        padding-top: 4rem;
+        justify-content: space-around;
+        position: relative;
+
+        @include breakpoint($sm) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding-top: 10rem;
+        }
+
+        .image-1 {
+            position: absolute;
+            right: 0;
+            top: 36rem;
+            max-width: 20rem;
+            transform: rotate(270deg);
+
+            @include breakpoint($sm) {
+                right: 10rem;
+                bottom: -15rem;
+                top: auto;
+            }
+
+            @include breakpoint($lg) {
+                right: 28rem;
+            }
+        }
+
+        .image-2 {
+            position: absolute;
+            right: -12.5rem;
+            bottom: 35rem;
+            transform: rotate(270deg);
+            max-width: 31rem;
+            z-index: 160;
+
+            @include breakpoint($sm) {
+                left: 16rem;
+                max-width: 42rem;
+                bottom: 3.5rem;
+            }
+
+            @include breakpoint($md) {
+                left: 21rem;
+            }
+
+            @include breakpoint($lg) {
+                left: 27rem;
+            }
+        }
+
+        .card {
+            border-radius: 2rem;
+            background-color: $white;
+            z-index: 150;
+            position: relative;
+            padding: 3rem;
+            box-shadow: 0px 4px 19px -10px rgb(0, 0, 0, 0.5);
+            text-align: left;
+            max-width: 22rem;
+
+            h3 {
+                color: $black;
+                font-size: 1.6rem;
+            }
+
+            p { 
+                color: $black;
+                font-size: 1.2rem;
+            }
+
+            &.green {
+                background-color: $green;
+                position: relative;
+                left: 3rem;
+
+                h3, p {
+                    color: $white;
+                }
+            }
+
+            h3 {
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+
+    &__row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 7rem;
+    }
+}

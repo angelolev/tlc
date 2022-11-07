@@ -1,0 +1,94 @@
+.header {
+    position: relative;
+    overflow: hidden;
+    
+    &__content {
+        padding: 7rem 4rem 3rem;
+
+        @include breakpoint($sm) {
+            display: flex;
+            padding: 10rem 0 10rem 7rem;
+            justify-content: space-between;
+        }
+
+        @include breakpoint($lg) {
+            padding: 15rem 0 0 7rem;
+        }
+
+        .left {
+            @include breakpoint($lg) {
+                width: 80%;
+            }
+        }
+
+        h1 {
+            line-height: 2.2rem;
+            font-weight: bold;
+            font-size: 2.4rem;
+            margin-bottom: 2rem;
+
+            span {
+                font-family: $font-heading;
+                color: $yellow;
+                font-size: 3rem;
+            }
+
+            @include breakpoint($sm) {
+                font-size: 4.4rem;
+                line-height: 5.2rem;
+                max-width: 30rem;
+
+                span {
+                    font-size: 4rem;
+                }
+            }
+
+            @include breakpoint($md) {
+                max-width: 55rem;
+            }
+        }
+
+        .description {
+            max-width: 35rem;
+
+            @include breakpoint($lg) {
+                font-size: 2.4rem;
+                max-width: 100%;
+            }
+        }
+    }
+
+    &__apps {
+        display: flex;
+        justify-content: flex-start;
+        gap: 1.5rem;
+        padding: 2rem 0;
+
+        @include breakpoint($lg) {
+            padding: 4rem 0;
+        }
+    }
+
+    &__images {
+        min-height: 50rem;
+        
+        img {
+            position: absolute;
+
+            @include breakpoint($sm) {
+                max-width: 40rem;
+                right: -1.5rem;
+                top: 5rem;
+            }
+
+            @include breakpoint($md) {
+                position: relative;
+                top: -5rem;
+            }
+
+            @include breakpoint($lg) {
+                max-width: 100%;
+            }
+        }
+    }
+}

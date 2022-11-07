@@ -1,0 +1,72 @@
+.container {
+  margin: 0 auto;
+  max-width: 100%;
+
+  @include breakpoint($sm) {
+    max-width: 745px;
+  }
+
+  @include breakpoint($md) {
+    max-width: 920px;
+  }
+
+  @include breakpoint($lg) {
+    max-width: 1200px;
+  }
+}
+
+.btn-application {
+  background-color: $gray;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  color: $black;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  max-width: 15rem;
+  min-width: 13.5rem;
+  align-items: center;
+
+  &:hover {
+    background-color: $green;
+    color: $white;
+  }
+
+  img {
+    max-width: 1.5rem;
+
+    @include breakpoint($lg) {
+      max-width: 2rem;
+    }
+  }
+
+  p {
+    font-weight: bold;
+    line-height: 1rem;
+    font-size: 1.2rem;
+
+    @include breakpoint($lg) {
+      font-size: 1.6rem;
+    }
+
+    &.small {
+      font-size: 1rem;
+      font-weight: normal;
+      margin-bottom: .5rem;
+
+      @include breakpoint($lg) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  @include breakpoint($sm) {
+    padding: 1.5rem 2rem;
+  }
+
+  @include breakpoint($lg) {
+    max-width: 25rem;
+    min-width: 16.3rem;
+    padding: 2rem 4rem;
+  }
+}
