@@ -81,7 +81,7 @@ main {
 
 .icon-menu:before {
   content: "\e900";
-  color: #fdfdfd;
+  color: #1cc555;
 }
 
 .icon-delivery:before {
@@ -296,10 +296,12 @@ nav ul li .scrollable.active {
 }
 .header__content .description {
   max-width: 35rem;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
 }
 @media (min-width: 1200px) {
   .header__content .description {
-    font-size: 2.4rem;
+    font-size: 1.6rem;
     max-width: 100%;
   }
 }
@@ -360,6 +362,11 @@ nav ul li .scrollable.active {
   margin: 0 auto;
   line-height: 2rem;
 }
+@media (min-width: 992px) {
+  .how-to-order .description {
+    max-width: 40rem;
+  }
+}
 .how-to-order__steps {
   display: flex;
   flex-direction: column;
@@ -389,6 +396,17 @@ nav ul li .scrollable.active {
   box-shadow: 0px 4px 19px -10px rgba(0, 0, 0, 0.5);
   text-align: left;
   max-width: 20rem;
+  transition-duration: 0.3s;
+  cursor: default;
+}
+.how-to-order__steps .step:hover {
+  background-color: #00CC00;
+}
+.how-to-order__steps .step:hover h3, .how-to-order__steps .step:hover p {
+  color: #ffffff;
+}
+.how-to-order__steps .step:hover .icon:before {
+  color: #fff;
 }
 @media (min-width: 1200px) {
   .how-to-order__steps .step {
@@ -404,12 +422,6 @@ nav ul li .scrollable.active {
 .how-to-order__steps .step p {
   color: #000000;
   font-size: 1rem;
-}
-.how-to-order__steps .step.green {
-  background-color: #00CC00;
-}
-.how-to-order__steps .step.green h3, .how-to-order__steps .step.green p {
-  color: #ffffff;
 }
 .how-to-order__steps .step .icon {
   font-size: 3rem;
@@ -458,50 +470,48 @@ nav ul li .scrollable.active {
 }
 .tools__cards .image-1 {
   position: absolute;
-  right: 8rem;
-  top: 38rem;
-  max-width: 17rem;
-  transform: rotate(270deg);
+  max-width: 30rem;
   z-index: 50;
+  right: -6.5rem;
+  top: 7.5rem;
 }
 @media (min-width: 768px) {
   .tools__cards .image-1 {
-    right: 10rem;
-    bottom: -15rem;
     top: auto;
+    left: -13.5rem;
+    bottom: 1.5rem;
+    z-index: 5;
+  }
+}
+@media (min-width: 992px) {
+  .tools__cards .image-1 {
+    z-index: 50;
+    left: -22.5rem;
   }
 }
 @media (min-width: 1200px) {
   .tools__cards .image-1 {
-    right: 30rem;
-    bottom: -5rem;
-    max-width: 22rem;
+    left: -16.5rem;
+    bottom: 3.5rem;
+    max-width: 48rem;
   }
 }
 .tools__cards .image-2 {
   position: absolute;
-  right: -6rem;
-  bottom: 35rem;
-  transform: rotate(270deg);
-  max-width: 31rem;
+  max-width: 15rem;
   z-index: 160;
+  right: -6rem;
+  bottom: -10rem;
 }
 @media (min-width: 768px) {
   .tools__cards .image-2 {
-    left: 16rem;
-    max-width: 42rem;
-    bottom: 3.5rem;
-  }
-}
-@media (min-width: 992px) {
-  .tools__cards .image-2 {
-    left: 21rem;
+    bottom: 0;
   }
 }
 @media (min-width: 1200px) {
   .tools__cards .image-2 {
-    left: 27rem;
-    bottom: 14.5rem;
+    max-width: 27rem;
+    right: -23rem;
   }
 }
 .tools__cards .card {
@@ -512,14 +522,23 @@ nav ul li .scrollable.active {
   padding: 3rem 2rem;
   box-shadow: 0px 4px 19px -10px rgba(0, 0, 0, 0.5);
   text-align: left;
-  max-width: 22rem;
+  width: 22rem;
   left: -5rem;
+  transition-duration: 0.3s;
+  cursor: default;
+}
+.tools__cards .card:hover {
+  background-color: #00CC00;
+  position: relative;
+}
+.tools__cards .card:hover h3, .tools__cards .card:hover p {
+  color: #ffffff;
 }
 @media (min-width: 1200px) {
   .tools__cards .card {
     left: 0;
-    padding: 4rem 5rem;
-    max-width: 26rem;
+    padding: 4rem;
+    width: 26rem;
     margin-bottom: 6rem;
   }
 }
@@ -536,18 +555,21 @@ nav ul li .scrollable.active {
     font-size: 1.2rem;
   }
 }
+.tools__cards .card p.small {
+  max-width: 13.5rem;
+}
+@media (min-width: 1200px) {
+  .tools__cards .card p.small {
+    max-width: 18.5rem;
+  }
+}
 .tools__cards .card.green {
-  background-color: #00CC00;
-  position: relative;
   left: -2.5rem;
 }
 @media (min-width: 1200px) {
   .tools__cards .card.green {
     left: 1rem;
   }
-}
-.tools__cards .card.green h3, .tools__cards .card.green p {
-  color: #ffffff;
 }
 .tools__cards .card.green.landscape {
   left: 6rem;
@@ -569,6 +591,7 @@ nav ul li .scrollable.active {
   flex-direction: column;
   align-items: center;
   gap: 7rem;
+  position: relative;
 }
 
 .social-networks {

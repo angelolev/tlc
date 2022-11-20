@@ -42,46 +42,48 @@
 
         .image-1 {
             position: absolute;
-            right: 8rem;
-            top: 38rem;
-            max-width: 17rem;
-            transform: rotate(270deg);
+            max-width: 30rem;
             z-index: 50;
+            right: -6.5rem;
+            top: 7.5rem;
 
             @include breakpoint($sm) {
-                right: 10rem;
-                bottom: -15rem;
                 top: auto;
+                left: -13.5rem;
+                bottom: 1.5rem;
+                z-index: 5;
+            }
+
+            @include breakpoint($md) {
+                z-index: 50;
+                left: -22.5rem;
             }
 
             @include breakpoint($lg) {
-                right: 30rem;
-                bottom: -5rem;
-                max-width: 22rem;
+                left: -16.5rem;
+                bottom: 3.5rem;
+                max-width: 48rem;
             }
         }
 
         .image-2 {
             position: absolute;
-            right: -6rem;
-            bottom: 35rem;
-            transform: rotate(270deg);
-            max-width: 31rem;
+            max-width: 15rem;
             z-index: 160;
+            right: -6rem;
+            bottom: -10rem;
 
             @include breakpoint($sm) {
-                left: 16rem;
-                max-width: 42rem;
-                bottom: 3.5rem;
+                bottom: 0;
             }
 
             @include breakpoint($md) {
-                left: 21rem;
+                
             }
 
             @include breakpoint($lg) {
-                left: 27rem;
-                bottom: 14.5rem;
+                max-width: 27rem;
+                right: -23rem;
             }
         }
 
@@ -93,13 +95,24 @@
             padding: 3rem 2rem;
             box-shadow: 0px 4px 19px -10px rgb(0, 0, 0, 0.5);
             text-align: left;
-            max-width: 22rem;
+            width: 22rem;
             left: -5rem;
+            transition-duration: 0.3s;
+            cursor: default;
+
+            &:hover {
+                background-color: $green;
+                position: relative;
+
+                h3, p {
+                    color: $white;
+                }
+            }
 
             @include breakpoint($lg) {
                 left: 0;
-                padding: 4rem 5rem;
-                max-width: 26rem;
+                padding: 4rem;
+                width: 26rem;
                 margin-bottom: 6rem;
             }
 
@@ -115,20 +128,28 @@
                 @include breakpoint($lg) {
                     font-size: 1.2rem;
                 }
+
+                &.small {
+                    max-width: 13.5rem;
+
+                    @include breakpoint($lg) {
+                        max-width: 18.5rem;
+                    }
+                }
             }
 
             &.green {
-                background-color: $green;
-                position: relative;
+                // background-color: $green;
+                // position: relative;
                 left: -2.5rem;
 
                 @include breakpoint($lg) {
                     left: 1rem;
                 }
 
-                h3, p {
-                    color: $white;
-                }
+                // h3, p {
+                //     color: $white;
+                // }
 
                 &.landscape {
                     left: 6rem;
@@ -154,5 +175,6 @@
         flex-direction: column;
         align-items: center;
         gap: 7rem;
+        position: relative;
     }
 }
