@@ -39,17 +39,31 @@
         }
 
         .arrow {
-            transform: rotate(90deg);
+            &:after {
+                content: '\e900';
+                background: $white;
+                color: $green;
+                font-size: 3rem;
+                border-radius: 50%;
+                padding: 1rem;
+                width: 2rem;
+                height: 2rem;
+                font-family: 'tlc';
+            }
 
-            @include breakpoint($sm) {
-                transform: rotate(0);
+            &:hover {
+                &:after {
+                    background-color: $green;
+                    color: $white;
+                }
+                
             }
         }
 
         .step {
             border-radius: 2rem;
             padding: 2rem;
-            box-shadow: 0px 4px 19px -10px rgb(0, 0, 0, 0.5);
+            box-shadow: 0px 4px 19px -10px rgba(0, 0, 0, 0.5);
             text-align: left;
             max-width: 20rem;
             transition-duration: 0.3s;
